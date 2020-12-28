@@ -91,7 +91,7 @@ impl Drive for Driver {
         })
     }
 
-    fn poll_submit(self: Pin<&mut Self>, _: &mut Context<'_>, _: bool)
+    fn poll_submit(self: Pin<&mut Self>, _: &mut Context<'_>)
         -> Poll<io::Result<u32>>
     {
         Poll::Ready(PROACTOR.with(|proactor| {
